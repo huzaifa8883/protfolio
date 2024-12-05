@@ -3,7 +3,7 @@ import { FaBullhorn, FaMobileAlt, FaLaptopCode, FaCube, FaGamepad, FaDigitalOcea
 
 const Home = () => {
   return (
-    <div className="bg-[#17181A] text-white">
+    <div className="bg-[#17181A] text-white overflow-x-hidden">
       {/* Hero Section */}
       <div className="relative min-h-screen w-full flex items-center justify-center overflow-hidden">
         {/* Background Image */}

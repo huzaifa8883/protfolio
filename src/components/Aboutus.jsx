@@ -5,7 +5,7 @@ import { faArrowRight,faTrophy, faUsers, faSmile, faDownload, faGift } from '@fo
 const Aboutus = () => {
   return (
     <>
-    <div className='h-auto w-full bg-[#17181A]'>
+    <div className='h-auto w-full bg-[#17181A] overflow-x-hidden'>
 <div className="lg:h-[350px] h-[200px]  w-full bg-[#212529] flex flex-col md:flex-row items-center justify-center text-white font-bold">
   {/* Left section with text (full screen width) */}
   <div className="flex flex-col items-center justify-center text-center md:text-left w-full md:w-[50%]">
