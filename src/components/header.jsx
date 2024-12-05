@@ -7,7 +7,10 @@ import { Link } from 'react-router-dom';// Import search and bars icons
 import { useEffect } from 'react';
 
 const Header = () => {
+
   const [toggleform, settoggleform] = useState(false);
+
+
   const handletoggleform = () => {
     console.log("Toggling form", toggleform);
     settoggleform(!toggleform);
@@ -25,7 +28,6 @@ const Header = () => {
       document.body.style.position = 'relative'; // Cleanup
     };
   }, [toggleform]);
-
   return (
     <>
       <div className="h-20 w-full flex items-center bg-[#212529] shadow-md font-sans">
