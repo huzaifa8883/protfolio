@@ -32,7 +32,7 @@ const Contact = () => {
     />
   </div>
 </div>
-<div className="bg-black text-white py-20 px-6 font-sans">
+<div className="bg-[#202124] text-white py-20 px-6 font-sans">
   <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-12">
     {/* Location Card */}
     <div className="bg-[#17181a] border border-gray-700 rounded-xl shadow-lg p-8 text-center hover:border-red-500 hover:shadow-2xl transition-all duration-300">
@@ -78,7 +78,7 @@ const Contact = () => {
 
 
 <div className="bg-transparent text-white px-6 font-sans">
-  <div className="max-w-4xl mx-auto bg-opacity-80 bg-gradient-to-r from-[#17181a] to-[#1f2226] border border-gray-700 rounded-xl shadow-lg p-8">
+  <div className="max-w-4xl mx-auto bg-opacity-80 bg-[#202124] border border-gray-700 rounded-xl shadow-lg p-8">
     <h2 className="text-4xl font-extrabold mb-6 text-center tracking-wide font-['Poppins']">
       Get in Touch
     </h2>
