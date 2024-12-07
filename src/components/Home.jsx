@@ -1,9 +1,33 @@
 import React from "react";
-import { FaBullhorn, FaMobileAlt, FaLaptopCode, FaCube, FaGamepad, FaDigitalOcean } from "react-icons/fa";
+import { FaBullhorn, FaMobileAlt, FaLaptopCode, FaCube, FaGamepad, FaDigitalOcean,FaArrowUp, FaArrowRight } from "react-icons/fa";
+import { Link } from "react-router-dom";
+import { useNavigate } from 'react-router-dom';
 
 const Home = () => {
+  const navigate = useNavigate(); // For navigation
+
+  const handleClick = (projectId) => {
+    // Delay navigation by 2 seconds
+    setTimeout(() => {
+      navigate(`/project${projectId}`);
+    }, 2000); // 2-second delay
+  };
+
+  const handleClicks = () => {
+    // Delay navigation by 2 seconds
+    setTimeout(() => {
+      navigate("/project1");
+    }, 2000); // 2-second delay
+  };
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth', // Smooth scrolling effect
+    });
+  };
+
   return (
-    <div className="bg-[#17181A] text-white overflow-x-hidden">
+    <div className="bg-[#17181A] text-white overflow-x-hidden  ">
       {/* Hero Section */}
       <div className="relative min-h-screen w-full flex items-center justify-center overflow-hidden">
         {/* Background Image */}
@@ -11,23 +35,25 @@ const Home = () => {
           <img
             src="https://nexttechnology.io/app/uploads/2021/09/recruitment-agency-vs-software-house.png"
             alt="Software Development"
-            className="h-full w-full object-cover max-h-[500px]"
+            className="h-full w-full object-cover max-h-[550px]"
           />
           <div className="absolute inset-0 bg-black bg-opacity-60"></div>
         </div>
 
         {/* Centered Text Section */}
-        <div className="absolute inset-0 mb-28 flex flex-col items-center justify-center text-white text-center px-6 z-10">
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-snug md:leading-tight mb-6">
+        <div className="absolute inset-0 mb-12 flex flex-col items-center justify-center text-white text-center px-6 z-10">
+          <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold leading-snug md:leading-tight mb-6">
             We are a leading software company
           </h1>
           <p className="text-lg md:text-xl lg:text-2xl opacity-90 mb-8 max-w-2xl mx-auto">
             For the past 5 years, we specialize in developing high-quality software solutions tailored to meet the needs of businesses across industries. Our expert team delivers exceptional results.
           </p>
           <div>
+            <Link to={"/contact"}>
             <button className="px-10 py-4 bg-white text-[#17181A] font-semibold rounded-md shadow-lg hover:bg-[#ff5722] hover:text-white hover:shadow-xl transition-all duration-300 transform hover:scale-105">
               Contact Manager
             </button>
+            </Link>
           </div>
         </div>
 
@@ -37,7 +63,7 @@ const Home = () => {
       </div>
 
       {/* Services Section */}
-      <div className="py-16 bg-[#202124] text-center mt-[-160px]">
+      <div className="py-20  text-center mt-[-160px]">
       <div class="relative text-center">
 
 
@@ -54,76 +80,80 @@ const Home = () => {
 />
 
 
-<h1 class="text-center text-6xl font-bold mb-12 bg-gradient-to-r from-black to-gray-300 z-50 text-transparent bg-clip-text tracking-tight">
+<h1 class="text-center text-6xl font-bold mb-12 text-white z-50 text-transparent bg-clip-text tracking-tight ">
   <span class="border-b-2 border-gray-500">Services</span>
 </h1>
+
+
+
 </div>
 
 
-  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12 px-6 md:px-16">
-    {[
-      { icon: <FaBullhorn />, title: "Digital Marketing", number: "01", isAllServices: false },
-      { icon: <FaMobileAlt />, title: "App Development", number: "02", isAllServices: false },
-      { icon: <FaLaptopCode />, title: "Web Development", number: "03", isAllServices: false },
-      { icon: <FaCube />, title: "Blockchain Development", number: "04", isAllServices: false },
-      { icon: <FaGamepad />, title: "Game Development", number: "05", isAllServices: false },
-      { icon: <FaDigitalOcean />, title: "All Services", number: "06", isAllServices: true },
-    ].map((service, index) => (
-      <div
-        key={index}
-        className={`relative group p-6 ${
-          service.isAllServices
-            ? "bg-gradient-to-br from-[#202124] to-[#434343] text-white shadow-xl hover:shadow-2xl transform hover:scale-105"
-            : "bg-gradient-to-br from-[#202124] to-[#434343] text-white shadow-lg hover:shadow-xl transform hover:scale-105"
-        } border border-gray-500 rounded-lg overflow-hidden h-[150px] transition-all duration-300 hover:border-2 hover:border-red-500`}
-      >
-        {/* Add Red Border and Icon/Text Hover Effect */}
-        <div className="absolute inset-0 border-2 border-transparent group-hover:border-red-500 transition-all duration-300"></div>
+<div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12 px-6 md:px-16">
+  {[
+    { icon: <FaBullhorn />, title: "Digital Marketing", number: "01", isAllServices: false },
+    { icon: <FaMobileAlt />, title: "App Development", number: "02", isAllServices: false },
+    { icon: <FaLaptopCode />, title: "Web Development", number: "03", isAllServices: false },
+    { icon: <FaCube />, title: "Blockchain Development", number: "04", isAllServices: false },
+    { icon: <FaGamepad />, title: "Game Development", number: "05", isAllServices: false },
+    { icon: <FaDigitalOcean />, title: "All Services", number: "06", isAllServices: true },
+  ].map((service, index) => (
+    <Link
+      key={index}
+      to="/services" // All services will link to /services page
+      className={`relative group p-6 ${
+        service.isAllServices
+          ? "bg-gradient-to-br from-[#202124] to-[#434343] text-white shadow-xl hover:shadow-2xl transform hover:scale-105"
+          : "bg-gradient-to-br from-[#202124] to-[#434343] text-white shadow-lg hover:shadow-xl transform hover:scale-105"
+      } border border-gray-500 rounded-lg overflow-hidden h-[150px] transition-all duration-300 hover:border-2 hover:border-red-500`}
+    >
+      {/* Add Red Border and Icon/Text Hover Effect */}
+      <div className="absolute inset-0 border-2 border-transparent group-hover:border-red-500 transition-all duration-300"></div>
 
-        {/* Flex Container for Number, Icon, and Text */}
-        <div className="flex items-center justify-between h-full relative z-10">
-          {/* Number on the Left */}
-          <div
-            className={`text-4xl font-bold ${
-              service.isAllServices ? "text-[#ff5722]" : "text-white"
-            } transition-colors duration-300 group-hover:text-red-500`}
-          >
-            {service.number}
-          </div>
-
-          {/* Icon and Title on the Right */}
-          <div className="flex flex-col items-start ml-4">
-            {/* Service Icon */}
-            <div
-              className={`text-5xl mb-2 ${
-                service.isAllServices ? "text-white" : "text-gray-300"
-              } transition-colors duration-300 group-hover:text-red-500`}
-            >
-              {service.icon}
-            </div>
-            {/* Service Title */}
-            <h3
-              className={`text-xl font-semibold mb-2 ${
-                service.isAllServices ? "text-white" : "text-white"
-              } group-hover:text-red-500 transition-all duration-300`}
-            >
-              {service.title}
-            </h3>
-          </div>
+      {/* Flex Container for Number, Icon, and Text */}
+      <div className="flex items-center justify-between h-full relative z-10">
+        {/* Number on the Left */}
+        <div
+          className={`text-4xl font-bold ${
+            service.isAllServices ? "text-[#ff5722]" : "text-white"
+          } transition-colors duration-300 group-hover:text-red-500`}
+        >
+          {service.number}
         </div>
 
-        {/* Explore Button (only for All Services) */}
-        {service.isAllServices && (
-          <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2">
-            {/* Uncomment the button below if needed */}
-            {/* <button className="bg-[#ff5722] text-white py-2 px-6 rounded-lg hover:bg-[#ff9100] transition-colors duration-300">
-              Explore All Services
-            </button> */}
+        {/* Icon and Title on the Right */}
+        <div className="flex flex-col items-start ml-4">
+          {/* Service Icon */}
+          <div
+            className={`text-5xl mb-2 ${
+              service.isAllServices ? "text-white" : "text-gray-300"
+            } transition-colors duration-300 group-hover:text-red-500`}
+          >
+            {service.icon}
           </div>
-        )}
+          {/* Service Title */}
+          <h3
+            className={`text-xl font-semibold mb-2 ${
+              service.isAllServices ? "text-white" : "text-white"
+            } group-hover:text-red-500 transition-all duration-300`}
+          >
+            {service.title}
+          </h3>
+        </div>
       </div>
-    ))}
-  </div>
+
+      {/* Explore Button (only for All Services) */}
+      {service.isAllServices && (
+        <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2">
+          {/* Uncomment the button below if needed */}
+          {/* <button className="bg-[#ff5722] text-white py-2 px-6 rounded-lg hover:bg-[#ff9100] transition-colors duration-300">
+            Explore All Services
+          </button> */}
+        </div>
+      )}
+    </Link>
+  ))}
+</div>
 </div>
 
 <div className="py-16 px-6 md:px-16 bg-[#202124] text-white">
@@ -143,7 +173,7 @@ const Home = () => {
   />
   
 
-  <h1 class="text-center text-6xl font-bold mb-12 bg-gradient-to-r from-black to-gray-300 z-50 text-transparent bg-clip-text tracking-tight">
+  <h1 class="text-center md:text-6xl text-5xl font-bold mb-12 text-white whitespace-nowrap z-50 text-transparent bg-clip-text tracking-tight">
     <span class="border-b-2 border-gray-500">Latest Work</span>
   </h1>
 </div>
@@ -162,70 +192,81 @@ const Home = () => {
   <p className="text-lg md:text-xl text-gray-300 mb-8">
     We guide game-changing companies, across platforms & places, through agile design & digital experiences. We make waves.
   </p>
-  <button className="bg-gradient-to-r from-[#ff5722] to-[#ff9100] text-white px-8 py-3 text-lg rounded-full shadow-lg hover:shadow-xl transition-all transform hover:scale-105">
-    View All Work
-  </button>
+  <button 
+      onClick={scrollToTop}
+      className="bg-gradient-to-r from-[#ff5722] to-[#ff9100] text-white px-8 py-3 text-lg rounded-full shadow-lg hover:shadow-xl transition-all transform hover:scale-105 flex items-center space-x-2"
+    >
+      <span>View All Work</span>
+      <FaArrowRight className="text-white" />
+    </button>
 </div>
 
 
   {/* Right Section: Image with Hover Effect */}
   <div className="w-full md:w-[47%] relative group">
-    <img
-      src="https://media.istockphoto.com/id/1347626309/photo/latina-female-using-desktop-computer-with-clothing-online-web-store-to-choose-and-buy-clothes.jpg?s=612x612&w=0&k=20&c=SGKPpmCvxMFYld_4MXuSUBFmAcHylKNp2kJgWuszmgw="
-      alt="Latest Work"
-      className="w-full h-[300px] object-cover rounded-lg shadow-lg"
-    />
-    {/* Hover Overlay with Text */}
-    <div className="absolute inset-0 bg-gradient-to-t from-gray-900 via-gray-800 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-center justify-center">
-      <div className="text-center text-white px-6 py-4">
-        <h3 className="text-2xl font-bold">Latest Work: E-Commerce Platform</h3>
-        <p className="text-lg">We created a seamless online shopping experience with AI-powered recommendations and real-time inventory management.</p>
+      {/* Wrapping image in div and handling the onClick event */}
+      <div onClick={handleClicks} className="cursor-pointer">
+        <img
+          src="https://media.istockphoto.com/id/1347626309/photo/latina-female-using-desktop-computer-with-clothing-online-web-store-to-choose-and-buy-clothes.jpg?s=612x612&w=0&k=20&c=SGKPpmCvxMFYld_4MXuSUBFmAcHylKNp2kJgWuszmgw="
+          alt="Latest Work"
+          className="w-full h-[300px] object-cover rounded-lg shadow-lg"
+        />
+        {/* Hover Overlay with Text */}
+        <div className="absolute inset-0 bg-gradient-to-t from-gray-900 via-gray-800 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-center justify-center">
+          <div className="text-center text-white px-6 py-4">
+            <h3 className="text-2xl font-bold">Latest Work: E-Commerce Platform</h3>
+            <p className="text-lg">We created a seamless online shopping experience with AI-powered recommendations and real-time inventory management.</p>
+          </div>
+        </div>
       </div>
     </div>
-  </div>
 </div>
 
 
 
   {/* Second Row for Projects */}
-  <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-  {[ 
-    { 
-      id: 1, 
-      imgSrc: "https://financesonline.com/uploads/2017/08/rest.jpg", 
-      title: "We created an intuitive and efficient restaurant management software that helps businesses streamline operations, manage orders, and enhance customer experience."
-    },
-    { 
-      id: 2, 
-      imgSrc: "https://savvycomsoftware.com/wp-content/uploads/2024/09/A-photorealistic-image-representing-blockchain-as-the-cornerstone-of-DePIN-1024x585.webp", 
-      title: "We developed a cutting-edge blockchain solution to streamline secure transactions and enhance transparency"
-    },
-    { 
-      id: 3, 
-      imgSrc: "https://www.zdnet.com/a/img/resize/5e4939fed2bfd8d06200f4b5ff89bee6e4ca5dbe/2023/08/03/6465b332-9100-4836-b0d8-737809568679/gettyimages-1541246944.jpg?auto=webp&width=1280", 
-      title: "We built an advanced mobile application designed to revolutionize user engagement through AI-powered personalized recommendations"
-    },
-  ].map((work) => (
-    <div key={work.id} className="relative group overflow-hidden rounded-lg shadow-lg hover:scale-105 transform transition-all duration-300">
-      {/* Background Image */}
-      <img
-        src={work.imgSrc}
-        alt={work.title}
-        className="w-full h-[300px] object-cover transition-transform duration-500 group-hover:scale-110"
-      />
-      {/* Hover Overlay with Text */}
-      <div className="absolute inset-0 bg-gradient-to-t from-gray-900 via-gray-800 to-transparent flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-        <div className="text-center text-white px-6 py-4">
-          <h3 className="text-xl md:text-2xl font-bold">{work.title}</h3>
+  <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 cursor-pointer">
+      {[
+        {
+          id: 2,
+          imgSrc: "https://financesonline.com/uploads/2017/08/rest.jpg",
+          title: "We created an intuitive and efficient restaurant management software that helps businesses streamline operations, manage orders, and enhance customer experience."
+        },
+        {
+          id: 3,
+          imgSrc: "https://savvycomsoftware.com/wp-content/uploads/2024/09/A-photorealistic-image-representing-blockchain-as-the-cornerstone-of-DePIN-1024x585.webp",
+          title: "We developed a cutting-edge blockchain solution to streamline secure transactions and enhance transparency"
+        },
+        {
+          id: 4,
+          imgSrc: "https://www.zdnet.com/a/img/resize/5e4939fed2bfd8d06200f4b5ff89bee6e4ca5dbe/2023/08/03/6465b332-9100-4836-b0d8-737809568679/gettyimages-1541246944.jpg?auto=webp&width=1280",
+          title: "We built an advanced mobile application designed to revolutionize user engagement through AI-powered personalized recommendations"
+        },
+      ].map((work) => (
+        <div
+          key={work.id}
+          className="relative group overflow-hidden rounded-lg shadow-lg hover:scale-105 transform transition-all duration-300"
+          onClick={() => handleClick(work.id)} // Handle click
+        >
+          {/* Background Image */}
+          <img
+            src={work.imgSrc}
+            alt={work.title}
+            className="w-full h-[300px] object-cover transition-transform duration-500 group-hover:scale-110"
+          />
+          {/* Hover Overlay with Text */}
+          <div className="absolute inset-0 bg-gradient-to-t from-gray-900 via-gray-800 to-transparent flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+            <div className="text-center text-white px-6 py-4">
+              <h3 className="text-xl md:text-2xl font-bold">{work.title}</h3>
+            </div>
+          </div>
         </div>
-      </div>
+      ))}
     </div>
-  ))}
-</div>
 
 </div>
 
-<div className="grid grid-cols-1 lg:grid-cols-2 gap-8 px-4 md:px-20 my-3">
+<div className="grid grid-cols-1 lg:grid-cols-2 gap-8 px-4 md:px-32 my-16">
 
   
   <div className="h-full w-full flex justify-center items-center">
@@ -272,8 +313,8 @@ const Home = () => {
     </div>
   </div>
 
-  <div className="w-full lg:max-w-[550px] mx-auto">
-    <img src="https://reves-wp.b-cdn.net/wp-content/uploads/2023/01/abt2.jpg" className="w-full object-cover rounded-md"/>
+  <div className="w-full lg:max-w-[550px] h-full mx-auto">
+    <img src="https://reves-wp.b-cdn.net/wp-content/uploads/2023/01/abt2.jpg" className="w-full h-full object-cover rounded-md"/>
   </div>
 </div>
 <div class="relative text-center mb-6">
@@ -287,7 +328,7 @@ const Home = () => {
       alt="Fading Image" 
       class="fading-image absolute top-0 right-0 w-12 h-12 md:w-20 md:h-20 -mt-8 md:-mt-10 md:-mr-2"
     />
-    <h1 class="text-center text-6xl font-bold bg-gradient-to-r from-black to-gray-300 text-transparent bg-clip-text tracking-tight">
+    <h1 class="text-center text-6xl font-bold text-white text-transparent bg-clip-text tracking-tight">
       <span class="border-b-2 border-gray-500">Our Team</span>
     </h1>
   </div>
@@ -297,10 +338,10 @@ const Home = () => {
 
  
   <div class="team-member relative group">
-    <img src="https://reves-wp.b-cdn.net/wp-content/uploads/2023/01/team-member-1.jpg" alt="Mokarram Hossain" class="w-full h-full object-cover rounded-md shadow-lg transition-all duration-300 hover:scale-105"/>
+    <img src="https://media.licdn.com/dms/image/v2/C4E03AQGnJpaM0Pm_Hw/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1607150120179?e=2147483647&v=beta&t=0mQSq-GNfT5PodgE45TZtCLpR762bwharNWlEo05ckU" alt="Mokarram Hossain" class="w-full h-full object-cover rounded-md shadow-lg transition-all duration-300 hover:scale-105"/>
     <div class="team-info absolute inset-0 flex items-center justify-center bg-gray-800 bg-opacity-80 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
       <div class="text-center text-white px-4 py-6">
-        <h3 class="text-xl font-bold">Mokarram Hossain</h3>
+        <h3 class="text-xl font-bold">Ozair Umar</h3>
         <p class="font-semibold">Founder</p>
         <div class="social-links mt-4">
           <a href="#" class="text-white mx-2"><i class="fab fa-facebook"></i></a>
@@ -312,11 +353,11 @@ const Home = () => {
     </div>
   </div>
   <div class="team-member relative group">
-    <img src="https://reves-wp.b-cdn.net/wp-content/uploads/2023/01/team-member-3.jpg" alt="Mokarram Hossain" class="w-full h-full object-cover rounded-md shadow-lg transition-all duration-300 hover:scale-105"/>
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRNn8qNc_KlQVL-yRLSEvRLbgTrKR2kKsn-AQ&s" alt="Mokarram Hossain" class="w-full h-full object-cover rounded-md shadow-lg transition-all duration-300 hover:scale-105"/>
     <div class="team-info absolute inset-0 flex items-center justify-center bg-gray-800 bg-opacity-80 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
       <div class="text-center text-white px-4 py-6">
-        <h3 class="text-xl font-bold">Mokarram Hossain</h3>
-        <p class="font-semibold">Founder</p>
+        <h3 class="text-xl font-bold">hadrish ali</h3>
+        <p class="font-semibold">Project Manager</p>
         <div class="social-links mt-4">
           <a href="#" class="text-white mx-2"><i class="fab fa-facebook"></i></a>
           <a href="#" class="text-white mx-2"><i class="fab fa-twitter"></i></a>
@@ -328,11 +369,11 @@ const Home = () => {
   </div>
 
   <div class="team-member relative group">
-    <img src="https://reves-wp.b-cdn.net/wp-content/uploads/2023/01/team-member-4.jpg" alt="Mokarram Hossain" class="w-full h-full object-cover rounded-md shadow-lg transition-all duration-300 hover:scale-105"/>
+    <img src="https://assets.toptal.io/images?url=https%3A%2F%2Fbs-uploads.toptal.io%2Fblackfish-uploads%2Ftalent%2F1163586%2Fpicture%2Foptimized%2Fhuge_f223a9ecd2457e11ac4fee276a3d13e5-014ca66144c43d6e1190a2263f0c6dc1.jpg&width=480" alt="Mokarram Hossain" class="w-full h-full object-cover rounded-md shadow-lg transition-all duration-300 hover:scale-105"/>
     <div class="team-info absolute inset-0 flex items-center justify-center bg-gray-800 bg-opacity-80 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
       <div class="text-center text-white px-4 py-6">
-        <h3 class="text-xl font-bold">Mokarram Hossain</h3>
-        <p class="font-semibold">Founder</p>
+        <h3 class="text-xl font-bold">Muhammad Huzaifa</h3>
+        <p class="font-semibold">Product Manager</p>
         <div class="social-links mt-4">
           <a href="#" class="text-white mx-2"><i class="fab fa-facebook"></i></a>
           <a href="#" class="text-white mx-2"><i class="fab fa-twitter"></i></a>
@@ -343,11 +384,11 @@ const Home = () => {
     </div>
   </div>
   <div class="team-member relative group">
-    <img src="https://reves-wp.b-cdn.net/wp-content/uploads/2023/01/team-member-5.jpg" alt="Mokarram Hossain" class="w-full h-full object-cover rounded-md shadow-lg transition-all duration-300 hover:scale-105"/>
+    <img src="https://usamaejaz.com/images/me.jpg" alt="Mokarram Hossain" class="w-full h-full object-cover rounded-md shadow-lg transition-all duration-300 hover:scale-105"/>
     <div class="team-info absolute inset-0 flex items-center justify-center bg-gray-800 bg-opacity-80 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
       <div class="text-center text-white px-4 py-6">
-        <h3 class="text-xl font-bold">Mokarram Hossain</h3>
-        <p class="font-semibold">Founder</p>
+        <h3 class="text-xl font-bold">Ahmed Ali</h3>
+        <p class="font-semibold">Senior Software Engineer</p>
         <div class="social-links mt-4">
           <a href="#" class="text-white mx-2"><i class="fab fa-facebook"></i></a>
           <a href="#" class="text-white mx-2"><i class="fab fa-twitter"></i></a>
@@ -358,11 +399,13 @@ const Home = () => {
     </div>
   </div>
   <div class="team-member relative group">
-    <img src="https://reves-wp.b-cdn.net/wp-content/uploads/2023/01/team-member-6.jpg" alt="Mokarram Hossain" class="w-full h-full object-cover rounded-md shadow-lg transition-all duration-300 hover:scale-105"/>
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSfY6sx2W6wToUQKNL-9TOKWVPfXJGGBVXiew&s" alt="Mokarram Hossain" class="w-full h-full object-cover rounded-md shadow-lg transition-all duration-300 hover:scale-105"/>
     <div class="team-info absolute inset-0 flex items-center justify-center bg-gray-800 bg-opacity-80 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
       <div class="text-center text-white px-4 py-6">
-        <h3 class="text-xl font-bold">Mokarram Hossain</h3>
-        <p class="font-semibold">Founder</p>
+        <h3 class="text-xl font-bold">Usman Noman</h3>
+        <p class="font-semibold">UX/UI Designer
+
+</p>
         <div class="social-links mt-4">
           <a href="#" class="text-white mx-2"><i class="fab fa-facebook"></i></a>
           <a href="#" class="text-white mx-2"><i class="fab fa-twitter"></i></a>
@@ -373,11 +416,11 @@ const Home = () => {
     </div>
   </div>
   <div class="team-member relative group">
-    <img src="https://reves-wp.b-cdn.net/wp-content/uploads/2023/01/team-member-2.jpg" alt="John Doe" class="w-full h-full object-cover rounded-md shadow-lg transition-all duration-300 hover:scale-105"/>
+    <img src="https://media.licdn.com/dms/image/v2/C5103AQEtJeiGgnidjA/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1539449595814?e=2147483647&v=beta&t=-x7mgI1KZDbdZaXQYpfvUe8zLQQY_dKUv54UBc2a7sQ" alt="John Doe" class="w-full h-full object-cover rounded-md shadow-lg transition-all duration-300 hover:scale-105"/>
     <div class="team-info absolute inset-0 flex items-center justify-center bg-gray-800 bg-opacity-80 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
       <div class="text-center text-white px-4 py-6">
-        <h3 class="text-xl font-bold">John Doe</h3>
-        <p class="font-semibold">Developer</p>
+        <h3 class="text-xl font-bold">Muhammad Usman</h3>
+        <p class="font-semibold">HR Manager</p>
         <div class="social-links mt-4">
           <a href="#" class="text-white mx-2"><i class="fab fa-facebook"></i></a>
           <a href="#" class="text-white mx-2"><i class="fab fa-twitter"></i></a>
@@ -400,17 +443,34 @@ const Home = () => {
       alt="Fading Image" 
       class="fading-image absolute top-0 right-0 w-12 h-12 md:w-20 md:h-20 -mt-8 md:-mt-10 md:-mr-2"
     />
-    <h1 class="text-center text-6xl font-bold bg-gradient-to-r from-black to-gray-300 text-transparent bg-clip-text tracking-tight">
+    <h1 class="text-center text-6xl font-bold text-white text-transparent bg-clip-text tracking-tight">
       <span class="border-b-2 border-gray-500">Our Blog</span>
     </h1>
   </div>
 <div class="blogs-section my-10 px-4 md:px-20">
 
-<div class="blogs-intro mb-10 md:w-1/3 p-6 rounded-lg bg-gradient-to-br from-white via-white to-transparent">
-  <h2 class="text-8xl font-bold font-sansing mb-4 text-gray-800">See Our Articles</h2>
-  <p class="text-lg mb-4 text-gray-600 font-sansing">We guide game-changing companies, across platforms & places, through agile design & digital experience. We make waves.</p>
-  <a href="#" class="explore-btn">Explore More</a>
-</div>
+  <div class="blogs-intro mb-10 md:w-1/2 xl:w-1/3 p-10 rounded-3xl bg-gradient-to-br from-gray-800 via-gray-700 to-gray-900 shadow-2xl hover:shadow-3xl transition-shadow duration-300 relative overflow-hidden">
+
+    <div class="absolute inset-0 bg-gradient-to-br from-purple-700 via-transparent to-indigo-900 opacity-20 rounded-3xl"></div>
+    <div class="absolute -top-10 -right-10 w-44 h-44 bg-gradient-to-br from-purple-600 to-pink-500 rounded-full blur-3xl opacity-30"></div>
+
+    <div class="relative z-10">
+      <h2 class="text-5xl font-extrabold mb-6 text-transparent bg-clip-text ">
+        Discover Our Insights
+      </h2>
+      <p class="text-lg mb-8 text-gray-900 font-sans font-light leading-relaxed">
+        We empower transformative brands with innovative design and impactful digital experiences that create lasting impressions.
+      </p>
+      <a href="/blogs"
+         class="inline-block px-8 py-4 text-white bg-gradient-to-r from-purple-600 via-pink-500 to-red-400 rounded-full text-lg font-bold shadow-lg hover:shadow-2xl hover:scale-105 transition-all duration-300">
+        Explore Articles
+      </a>
+    </div>
+  </div>
+
+
+
+
 
 
 
@@ -419,13 +479,13 @@ const Home = () => {
   <div class="blog-post flex mb-6">
     <div class="blog-post-inner w-full flex border-2 border-white rounded-md shadow-lg">
       <div class="blog-image w-1/2 pr-4">
-        <img src="https://reves-wp.b-cdn.net/wp-content/uploads/2022/03/blog-post1-2-200x208.jpg" alt="Blog Image 1" class="w-full h-auto object-cover rounded-md"/>
+        <img src="https://nastp.gov.pk/assets_main/img/divs/sd1.JPG" alt="Blog Image 1" class="w-full h-auto object-cover rounded-md"/>
       </div>
       <div class="blog-content w-1/2 p-4">
-        <p class="text-sm text-gray-500 mb-2">March 22, 2022</p>
-        <h3 class="text-2xl font-bold mb-3">The Start-Up Ultimate Guide to Make Your WordPress</h3>
-        <p class="text-sm text-gray-700 mb-4">In today’s tech-driven landscape, having skills in UX design can take you a long way. While it is...</p>
-        <a href="#" class="text-red-500 font-semibold">Read More</a>
+        <p class="text-sm text-gray-500 mb-2">December 2, 2023</p>
+        <h3 class="text-2xl font-bold mb-3">Why Choose Our Software House?</h3>
+        <p class="text-sm text-gray-700 mb-4">Discover why we are the best choice for your software development needs.</p>
+        <a href="/blogs" class="text-red-500 font-semibold">Read More</a>
       </div>
     </div>
   </div>
@@ -433,13 +493,15 @@ const Home = () => {
   <div class="blog-post flex mb-6">
     <div class="blog-post-inner w-full flex border-2 border-white rounded-md shadow-lg">
       <div class="blog-image w-1/2 pr-4">
-        <img src="https://reves-wp.b-cdn.net/wp-content/uploads/2022/03/Image01-2-200x208.jpg" alt="Blog Image 2" class="w-full h-auto object-cover rounded-md"/>
+        <img src="https://www.hdwallpapers.in/download/abstract_tech_man_4k_8k_hd-1920x1080.jpg" alt="Blog Image 2" class="w-full h-auto object-cover rounded-md"/>
       </div>
       <div class="blog-content w-1/2 p-4">
-        <p class="text-sm text-gray-500 mb-2">March 22, 2022</p>
-        <h3 class="text-2xl font-bold mb-3">The Start-Up Ultimate Guide to Make Your WordPress</h3>
-        <p class="text-sm text-gray-700 mb-4">In today’s tech-driven landscape, having skills in UX design can take you a long way. While it is...</p>
-        <a href="#" class="text-red-500 font-semibold">Read More</a>
+        <p class="text-sm text-gray-500 mb-2">December 6, 2022</p>
+        <h3 class="text-2xl font-bold mb-3">Our Journey in the Tech Industry</h3>
+        <p class="text-sm text-gray-700 mb-4">A look at how we evolved in the ever-changing tech landscape.
+
+</p>
+        <a href="/blogs" class="text-red-500 font-semibold">Read More</a>
       </div>
     </div>
   </div>
@@ -458,7 +520,7 @@ const Home = () => {
       alt="Fading Image" 
       class="fading-image absolute top-0 right-0 w-12 h-12 md:w-20 md:h-20 -mt-8 md:-mt-10 md:-mr-2"
     />
-    <h1 class="text-center text-6xl font-bold bg-gradient-to-r from-black to-gray-300 text-transparent bg-clip-text tracking-tight">
+    <h1 class="text-center text-6xl font-bold text-white text-transparent bg-clip-text tracking-tight">
       <span class="border-b-2 border-gray-500">Testimonial</span>
     </h1>
   </div>

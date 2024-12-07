@@ -5,8 +5,8 @@ import { faArrowRight,faTrophy, faUsers, faSmile, faDownload, faGift } from '@fo
 const Aboutus = () => {
   return (
     <>
-    <div className='h-auto w-full bg-[#17181A] overflow-x-hidden'>
-<div className="lg:h-[350px] h-[200px]  w-full bg-[#212529] flex flex-col md:flex-row items-center justify-center text-white font-bold">
+    <div className='h-auto w-full bg-[#17181A] overflow-x-hidden '>
+<div className="lg:h-[350px] h-[200px] mt-16  w-full bg-[#212529] flex flex-col md:flex-row items-center justify-center text-white font-bold">
   {/* Left section with text (full screen width) */}
   <div className="flex flex-col items-center justify-center text-center md:text-left w-full md:w-[50%]">
     {/* Home and About Us with Arrow */}
@@ -55,7 +55,7 @@ const Aboutus = () => {
   <div className="w-full lg:max-w-[500px] bg-transparent border-[1px] border-gray-500 px-4 lg:px-8 py-6 flex flex-col justify-center space-y-6 lg:space-y-8 h-full">
     {/* Heading */}
     <div>
-      <h2 className="text-gray-400 font-manrope text-lg font-bold text-center">About Reve's</h2>
+      <h2 className="text-gray-400 font-manrope text-lg font-bold text-center">About SiteDesk</h2>
     </div>
 
     {/* Main Text Section (First Text Larger) */}
@@ -228,7 +228,7 @@ const Aboutus = () => {
       alt="Fading Image" 
       class="fading-image absolute top-0 right-0 w-12 h-12 md:w-20 md:h-20 -mt-8 md:-mt-10 md:-mr-2"
     />
-    <h1 class="text-center text-6xl font-bold bg-gradient-to-r from-black to-gray-300 text-transparent bg-clip-text tracking-tight">
+    <h1 class="text-center text-6xl font-bold text-black text-transparent bg-clip-text tracking-tight">
       <span class="border-b-2 border-gray-500">Testimonial</span>
     </h1>
   </div>
