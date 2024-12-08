@@ -67,42 +67,50 @@ const Blogs = () => {
     />
   </div>
 </div>
-<div className="min-h-screen bg-gray-900 text-white py-16 px-4 font-raleway">
+<div className="min-h-screen bg-[#17181a] text-white py-16 px-4 font-raleway">
   {/* Page Title */}
-  <h1 class="text-center text-5xl font-bold mb-12 text-white z-50 text-transparent bg-clip-text tracking-tight ">
-  <span class="border-b-2 border-gray-500"> Our Blogs</span>
-</h1>
-  {/* Blog Grid */}
-  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
-    {blogs.map((blog, index) => (
-      <div
-        key={index}
-        className="bg-gradient-to-br from-gray-800 via-gray-700 to-gray-900 rounded-xl shadow-2xl overflow-hidden transform transition-transform hover:scale-105"
-      >
-        {/* Blog Image */}
-        <div className="relative overflow-hidden">
-          <img
-            src={blog.image}
-            alt={blog.title}
-            className="w-full h-56 object-cover hover:opacity-90 transition-opacity"
-          />
-          <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent"></div>
-        </div>
+  <div className="text-center mb-12">
+  <h1 className="inline-block text-6xl text-white font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-teal-500 to-purple-600 mb-6">
+    Our Blogs
+  </h1>
+  <p className="text-xl text-gray-400 max-w-2xl mx-auto">
+    Explore our latest articles and insights to stay ahead in the industry.
+  </p>
+</div>
 
-        {/* Blog Content */}
-        <div className="p-6 space-y-4">
-          <h2 className="text-3xl font-bold text-gray-100">{blog.title}</h2>
-          <p className="text-gray-300 leading-relaxed">{blog.description}</p>
-          <Link
-            to={`/blog/${blog.slug}`}
-            className="inline-block text-indigo-400 font-semibold hover:text-indigo-500 transition-colors text-lg"
-          >
-            Read More &rarr;
-          </Link>
-        </div>
+
+  {/* Blog Grid */}
+  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-10">
+  {blogs.map((blog, index) => (
+    <div
+      key={index}
+      className="bg-gradient-to-br from-gray-800 via-gray-700 to-gray-900 rounded-xl shadow-xl overflow-hidden transform transition-transform hover:scale-105 hover:shadow-2xl hover:border-indigo-500 border-2 border-transparent"
+    >
+      {/* Blog Image */}
+      <div className="relative overflow-hidden">
+        <img
+          src={blog.image}
+          alt={blog.title}
+          className="w-full h-56 object-cover transition-all duration-300 ease-in-out transform hover:scale-105 hover:opacity-90"
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-40"></div>
       </div>
-    ))}
-  </div>
+
+      {/* Blog Content */}
+      <div className="p-6 space-y-4">
+        <h2 className="text-3xl font-extrabold text-gray-100">{blog.title}</h2>
+        <p className="text-gray-300 text-lg leading-relaxed">{blog.description}</p>
+        <Link
+          to={`/blog/${blog.slug}`}
+          className="inline-block text-indigo-400 font-semibold hover:text-indigo-500 transition-colors text-lg"
+        >
+          Read More &rarr;
+        </Link>
+      </div>
+    </div>
+  ))}
+</div>
+
 </div>
 <div className="w-full px-4 md:px-8 py-10 mt-9 bg-gradient-to-r from-black via-gray-900 to-black relative">
       {/* Overlay */}

@@ -26,7 +26,7 @@ const Footer = () => {
                 href="mailto:info@example.com"
                 className="hover:text-blue-500 transition"
               >
-                info@example.com
+                sitedesk
               </a>
             </p>
             <p className="text-sm font-medium">

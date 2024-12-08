@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowRight,faTrophy, faUsers, faSmile, faDownload, faGift } from '@fortawesome/free-solid-svg-icons'; 
 
@@ -55,7 +56,7 @@ const Aboutus = () => {
   <div className="w-full lg:max-w-[500px] bg-transparent border-[1px] border-gray-500 px-4 lg:px-8 py-6 flex flex-col justify-center space-y-6 lg:space-y-8 h-full">
     {/* Heading */}
     <div>
-      <h2 className="text-gray-400 font-manrope text-lg font-bold text-center">About SiteDesk</h2>
+      <h2 className="text-gray-400 font-manrope text-lg font-bold text-center">About Coderscrafter</h2>
     </div>
 
     {/* Main Text Section (First Text Larger) */}
@@ -90,9 +91,11 @@ const Aboutus = () => {
 
       {/* Read More Button */}
       <div className="mt-6 lg:mt-10 text-center">
+        <Link to="/blogs">
         <button className="px-6 py-2 border border-gray-500 text-white font-semibold rounded-md bg-transparent hover:bg-gray-500 hover:text-white transition duration-300">
           Read More
         </button>
+        </Link>
       </div>
     </div>
   </div>
@@ -103,121 +106,13 @@ const Aboutus = () => {
 
 <div className="w-full bg-[#17181A] py-16">
   <div className="max-w-7xl mx-auto px-4 lg:px-8">
-    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12 text-white">
-      
-      {/* Expert People */}
-      <div className="relative bg-[#2c2f36] p-10 rounded-xl text-center shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:scale-105">
-        <div className="relative z-10 mb-8">
-          <img 
-            src="https://images.squarespace-cdn.com/content/v1/584c56b5be659489bb1ae965/1556919976504-CN9HTN7INHRD56G0QUAK/How+Do+You+Become+a+People+Expert%3F.jpg" 
-            alt="Expert People" 
-            className="w-32 h-32 rounded-full border-4 border-[#1a1d1f] object-cover shadow-xl mb-4 mx-auto transition-all duration-300 transform hover:scale-110"
-          />
-          <FontAwesomeIcon icon={faUsers} className="text-5xl text-[#505658] mb-4" />
-        </div>
-        <p className="text-4xl font-semibold mb-2">10</p>
-        <p className="text-lg font-medium">Expert People</p>
-      </div>
-
-      {/* Satisfied Clients */}
-      <div className="relative bg-[#2c2f36] p-10 rounded-xl text-center shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:scale-105">
-        <div className="relative z-10 mb-8">
-          <img 
-            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSH1HMRHMOLHS_OhVihk9dF1O3uMS6Jj-qfCA&s" 
-            alt="Satisfied Clients" 
-            className="w-32 h-32 rounded-full border-4 border-[#1a1d1f] object-cover shadow-xl mb-4 mx-auto transition-all duration-300 transform hover:scale-110"
-          />
-          <FontAwesomeIcon icon={faSmile} className="text-5xl text-[#5d626a] mb-4" />
-        </div>
-        <p className="text-4xl font-semibold mb-2">150</p>
-        <p className="text-lg font-medium">Satisfied Clients</p>
-      </div>
-
-      {/* Software Downloads */}
-      <div className="relative bg-[#2c2f36] p-10 rounded-xl text-center shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:scale-105">
-        <div className="relative z-10 mb-8">
-          <img 
-            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQLBx3w9MCUpisKPouk7UwNGXwc4dZqTjAsQw&s" 
-            alt="Software Downloads" 
-            className="w-32 h-32 rounded-full border-4 border-[#1a1d1f] object-cover shadow-xl mb-4 mx-auto transition-all duration-300 transform hover:scale-110"
-          />
-          <FontAwesomeIcon icon={faDownload} className="text-5xl text-[#1e4f5a] mb-4" />
-        </div>
-        <p className="text-4xl font-semibold mb-2">500</p>
-        <p className="text-lg font-medium">Software Downloads</p>
-      </div>
-
-      {/* Innovative Solutions */}
-      <div className="relative bg-[#2c2f36] p-10 rounded-xl text-center shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:scale-105">
-        <div className="relative z-10 mb-8">
-          <img 
-            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS88AHNFUxpQWbl3qV16h5dmWn9qsW8kKBk4Q&s" 
-            alt="Innovative Solutions" 
-            className="w-32 h-32 rounded-full border-4 border-[#1a1d1f] object-cover shadow-xl mb-4 mx-auto transition-all duration-300 transform hover:scale-110"
-          />
-          <FontAwesomeIcon icon={faGift} className="text-5xl text-[#7a5e00] mb-4" />
-        </div>
-        <p className="text-4xl font-semibold mb-2">400</p>
-        <p className="text-lg font-medium">Innovative Solutions</p>
-      </div>
-      
-    </div>
+   
   </div>
 </div>
 
 
-<div className="grid grid-cols-1 lg:grid-cols-2 gap-8 px-4 md:px-20 ">
 
-  
-  <div className="h-full w-full flex justify-center items-center">
-    <div className="w-full lg:max-w-[500px] bg-transparent border-[1px] border-gray-500 px-6 py-4 flex flex-col justify-center space-y-6">
-      <div>
-        <h2 className="text-gray-400 font-manrope text-lg font-bold text-center">Why Choose Us?</h2>
-      </div>
-      
-      <div>
-        <p className="text-white text-2xl md:text-4xl font-bold text-center font-montserrat">
-          We're at the heart of NYC. Our reach is Global.
-        </p>
-      </div>
-     
-      <div>
-        <p className="text-[#9da1a5] text-sm md:text-lg text-center font-semibold font-roboto">
-          Our long experience at the top of the events business means we have expertise which reaches across a number of sectors, as well as knowledge of specific protocol and local.
-        </p>
-      </div>
-
-     
-      <div className="flex flex-wrap justify-center items-center gap-6 md:gap-8 py-8">
-        <div className="flex flex-col items-center space-y-2">
-          <div className="w-24 h-24 md:w-32 md:h-32 rounded-full border-2 border-l-red-500 border-t-red-500 border-r-gray-500 border-b-gray-500 flex justify-center items-center text-white font-semibold text-xl md:text-3xl">
-            85%
-          </div>
-          <p className="text-gray-100 font-bold font-montserrat text-xs md:text-sm">Web Development</p>
-        </div>
-
-        <div className="flex flex-col items-center space-y-2">
-          <div className="w-24 h-24 md:w-32 md:h-32 rounded-full border-2 border-l-red-500 border-t-red-500 border-r-gray-500 border-b-gray-500 flex justify-center items-center text-white font-semibold text-xl md:text-3xl">
-            90%
-          </div>
-          <p className="text-gray-100 font-bold font-montserrat text-xs md:text-sm">App Development</p>
-        </div>
-
-        <div className="flex flex-col items-center space-y-2">
-          <div className="w-24 h-24 md:w-32 md:h-32 rounded-full border-2 border-l-red-500 border-t-red-500 border-r-gray-500 border-b-gray-500 flex justify-center items-center text-white font-semibold text-xl md:text-3xl">
-            95%
-          </div>
-          <p className="text-gray-100 font-bold font-montserrat text-xs md:text-sm whitespace-nowrap">Game Development</p>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div className="w-full lg:max-w-[550px] mx-auto">
-    <img src="https://reves-wp.b-cdn.net/wp-content/uploads/2023/01/abt2.jpg" className="w-full object-cover rounded-md"/>
-  </div>
-</div>
-<div class="relative text-center mt-20 mb-4">
+<div class="relative text-center  mb-48">
     <img 
       src="https://reves-wp.b-cdn.net/wp-content/themes/reves-wp-theme-master/assets/images/icon/dotted.svg" 
       alt="Rotating Image" 
@@ -228,93 +123,139 @@ const Aboutus = () => {
       alt="Fading Image" 
       class="fading-image absolute top-0 right-0 w-12 h-12 md:w-20 md:h-20 -mt-8 md:-mt-10 md:-mr-2"
     />
-    <h1 class="text-center text-6xl font-bold text-black text-transparent bg-clip-text tracking-tight">
+    <h1 class="text-center text-6xl font-bold text-white text-transparent bg-clip-text tracking-tight">
       <span class="border-b-2 border-gray-500">Testimonial</span>
     </h1>
   </div>
-<div class="client-reviews-section bg-gradient-to-b from-gray-900 via-black to-gray-900 py-16 px-6 md:px-20 text-white">
+  <div class="client-reviews-section bg-gradient-to-b from-gray-900 via-black to-gray-900 py-6 mb-10 mt-[-150px] px-6 md:px-20 text-white">
 
-  <div class="reviews-intro text-center mb-14">
-    <h2 class="text-5xl md:text-6xl font-extrabold font-helveticaLight mb-6 text-gray-100 tracking-tight">
-      What Our Clients Say
-    </h2>
-    <p class="text-xl text-gray-400 font-montserrat leading-relaxed max-w-2xl mx-auto">
-      Discover how our clients have transformed their businesses with our innovative designs and tailored digital solutions.
-    </p>
+<div class="reviews-intro text-center mb-14">
+  <h2 class="text-5xl md:text-6xl font-extrabold font-helveticaLight mb-6 text-gray-100 tracking-tight">
+    What Our Clients Say
+  </h2>
+  <p class="text-xl text-gray-400 font-montserrat leading-relaxed max-w-2xl mx-auto">
+    Discover how our clients have transformed their businesses with our innovative designs and tailored digital solutions.
+  </p>
+</div>
+
+<div class="reviews-grid grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+
+ 
+
+  <div class="review-card bg-gray-800 p-8 rounded-xl shadow-xl transform transition-transform hover:scale-105">
+  <div class="flex items-center mb-5">
+    <img
+      src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTU4isAJgXN-dw-Yu8L0GaxDrMPn1x1h9txPw&s"
+      alt="Client 4"
+      class="w-16 h-16 object-cover rounded-full shadow-md"
+    />
+    <div class="ml-4">
+      <h4 class="text-xl font-semibold text-gray-100">Samiya Iqbal</h4>
+      <p class="text-sm text-gray-400">Founder of TechGuru</p>
+    </div>
   </div>
-
-
-  <div class="reviews-grid grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-  
-    <div class="review-card bg-gray-800 p-8 rounded-xl shadow-xl transform transition-transform hover:scale-105">
-      <div class="flex items-center mb-5">
-        <img
-          src="https://reves-wp.b-cdn.net/wp-content/uploads/2023/01/testimonial-01.jpg"
-          alt="Client 1"
-          class="w-16 h-16 object-cover rounded-full shadow-md"
-        />
-        <div class="ml-4">
-          <h4 class="text-xl font-semibold text-gray-100">Abdullah Ansary</h4>
-          <p class="text-sm text-gray-400">UI/UX Designer</p>
-        </div>
-      </div>
-      <p class="text-gray-300 font-manrope leading-relaxed mb-5">
-        "The team offered exceptional advice and crafted a brand that represents our values beautifully. It will be the cornerstone of our identity for years."
-      </p>
-      <div class="social-icons flex space-x-4">
-        <a href="#" class="text-gray-400 hover:text-red-500 transition"><i class="fab fa-facebook-f"></i></a>
-        <a href="#" class="text-gray-400 hover:text-red-500 transition"><i class="fab fa-twitter"></i></a>
-        <a href="#" class="text-gray-400 hover:text-red-500 transition"><i class="fab fa-instagram"></i></a>
-      </div>
-    </div>
-
-   
-    <div class="review-card bg-gray-800 p-8 rounded-xl shadow-xl transform transition-transform hover:scale-105">
-      <div class="flex items-center mb-5">
-        <img
-          src="https://reves-wp.b-cdn.net/wp-content/uploads/2023/01/testimonial-02.jpg"
-          alt="Client 2"
-          class="w-16 h-16 object-cover rounded-full shadow-md"
-        />
-        <div class="ml-4">
-          <h4 class="text-xl font-semibold text-gray-100">Maria Alishba</h4>
-          <p class="text-sm text-gray-400">CEO of Reves</p>
-        </div>
-      </div>
-      <p class="text-gray-300 font-manrope leading-relaxed mb-5">
-        "Their expertise brought a whole new dimension to our project. I couldn’t have asked for a more talented and supportive team."
-      </p>
-      <div class="social-icons flex space-x-4">
-        <a href="#" class="text-gray-400 hover:text-red-500 transition"><i class="fab fa-facebook-f"></i></a>
-        <a href="#" class="text-gray-400 hover:text-red-500 transition"><i class="fab fa-twitter"></i></a>
-        <a href="#" class="text-gray-400 hover:text-red-500 transition"><i class="fab fa-instagram"></i></a>
-      </div>
-    </div>
-
-  
-    <div class="review-card bg-gray-800 p-8 rounded-xl shadow-xl transform transition-transform hover:scale-105">
-      <div class="flex items-center mb-5">
-        <img
-          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRjsZoNxCCnJmbQJstybM8biFfTe708op30bg&s"
-          alt="Client 3"
-          class="w-16 h-16 object-cover rounded-full shadow-md"
-        />
-        <div class="ml-4">
-          <h4 class="text-xl font-semibold text-gray-100">Ali Khan</h4>
-          <p class="text-sm text-gray-400">Marketing Manager</p>
-        </div>
-      </div>
-      <p class="text-gray-300 font-manrope leading-relaxed mb-5">
-        "Their creativity and attention to detail amazed us. They turned our vision into a reality with a perfect digital strategy."
-      </p>
-      <div class="social-icons flex space-x-4">
-        <a href="#" class="text-gray-400 hover:text-red-500 transition"><i class="fab fa-facebook-f"></i></a>
-        <a href="#" class="text-gray-400 hover:text-red-500 transition"><i class="fab fa-twitter"></i></a>
-        <a href="#" class="text-gray-400 hover:text-red-500 transition"><i class="fab fa-instagram"></i></a>
-      </div>
-    </div>
+  <p class="text-gray-300 font-manrope leading-relaxed mb-5">
+    "CodersCrafter helped us bring our ideas to life with a seamless digital experience. The team’s professionalism and innovation were exceptional."
+  </p>
+  <div class="social-icons flex space-x-4">
+    <a href="#" class="text-gray-400 hover:text-red-500 transition"><i class="fab fa-facebook-f"></i></a>
+    <a href="#" class="text-gray-400 hover:text-red-500 transition"><i class="fab fa-twitter"></i></a>
+    <a href="#" class="text-gray-400 hover:text-red-500 transition"><i class="fab fa-instagram"></i></a>
   </div>
 </div>
+
+<div class="review-card bg-gray-800 p-8 rounded-xl shadow-xl transform transition-transform hover:scale-105">
+  <div class="flex items-center mb-5">
+    <img
+      src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTU9bQpNy6wTJxpHmzYXdo3FXHrnacijv1J-g&s"
+      alt="Client 5"
+      class="w-16 h-16 object-cover rounded-full shadow-md"
+    />
+    <div class="ml-4">
+      <h4 class="text-xl font-semibold text-gray-100">Farhan Ali</h4>
+      <p class="text-sm text-gray-400">CEO of DigitalZone</p>
+    </div>
+  </div>
+  <p class="text-gray-300 font-manrope leading-relaxed mb-5">
+    "Working with CodersCrafter was a great experience. They provided us with cutting-edge web solutions that made a real difference to our business."
+  </p>
+  <div class="social-icons flex space-x-4">
+    <a href="#" class="text-gray-400 hover:text-red-500 transition"><i class="fab fa-facebook-f"></i></a>
+    <a href="#" class="text-gray-400 hover:text-red-500 transition"><i class="fab fa-twitter"></i></a>
+    <a href="#" class="text-gray-400 hover:text-red-500 transition"><i class="fab fa-instagram"></i></a>
+  </div>
+</div>
+
+<div class="review-card bg-gray-800 p-8 rounded-xl shadow-xl transform transition-transform hover:scale-105">
+  <div class="flex items-center mb-5">
+    <img
+      src="https://media.licdn.com/dms/image/v2/D4E03AQFGSDA1Vijm6g/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1707892519986?e=2147483647&v=beta&t=9grdg1tuC6WJAiCIA645lrgXEte7Skj6N8XufpdV4Xo"
+      alt="Client 6"
+      class="w-16 h-16 object-cover rounded-full shadow-md"
+    />
+    <div class="ml-4">
+      <h4 class="text-xl font-semibold text-gray-100">Saeed Anwar</h4>
+      <p class="text-sm text-gray-400">Founder of Anwar Tech</p>
+    </div>
+  </div>
+  <p class="text-gray-300 font-manrope leading-relaxed mb-5">
+    "CodersCrafter’s team was fantastic in understanding our business goals and providing us with customized solutions that took our operations to the next level."
+  </p>
+  <div class="social-icons flex space-x-4">
+    <a href="#" class="text-gray-400 hover:text-red-500 transition"><i class="fab fa-facebook-f"></i></a>
+    <a href="#" class="text-gray-400 hover:text-red-500 transition"><i class="fab fa-twitter"></i></a>
+    <a href="#" class="text-gray-400 hover:text-red-500 transition"><i class="fab fa-instagram"></i></a>
+  </div>
+</div>
+<div class="review-card bg-gray-800 p-8 rounded-xl shadow-xl transform transition-transform hover:scale-105">
+  <div class="flex items-center mb-5">
+    <img
+      src="https://media.licdn.com/dms/image/v2/D4D03AQH2N5oA8QIcuQ/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1639821074936?e=2147483647&v=beta&t=WEHbq_A-ownuGbYynuw5xXS_pRT6wdWcI3kJntSaeKY"
+      alt="Client 7"
+      class="w-16 h-16 object-cover rounded-full shadow-md"
+    />
+    <div class="ml-4">
+      <h4 class="text-xl font-semibold text-gray-100">Ahmed Shahzad</h4>
+      <p class="text-sm text-gray-400">Co-Founder of Tech Innovators</p>
+    </div>
+  </div>
+  <p class="text-gray-300 font-manrope leading-relaxed mb-5">
+    "CodersCrafter delivered beyond our expectations. Their team is highly skilled, responsive, and always ready to provide valuable insights to improve our business."
+  </p>
+  <div class="social-icons flex space-x-4">
+    <a href="#" class="text-gray-400 hover:text-red-500 transition"><i class="fab fa-facebook-f"></i></a>
+    <a href="#" class="text-gray-400 hover:text-red-500 transition"><i class="fab fa-twitter"></i></a>
+    <a href="#" class="text-gray-400 hover:text-red-500 transition"><i class="fab fa-instagram"></i></a>
+  </div>
+</div>
+
+<div class="review-card bg-gray-800 p-8 rounded-xl shadow-xl transform transition-transform hover:scale-105">
+  <div class="flex items-center mb-5">
+    <img
+      src="https://media.licdn.com/dms/image/v2/C4D03AQE1sR3D5atOqQ/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1615447733978?e=2147483647&v=beta&t=-BjUk1YvyFb4i9RxnMJ4jRiGY6t-QjartnA-x2t2XwE"
+      alt="Client 8"
+      class="w-16 h-16 object-cover rounded-full shadow-md"
+    />
+    <div class="ml-4">
+      <h4 class="text-xl font-semibold text-gray-100">Hassan Raza</h4>
+      <p class="text-sm text-gray-400">Marketing Lead at Bright Solutions</p>
+    </div>
+  </div>
+  <p class="text-gray-300 font-manrope leading-relaxed mb-5">
+    "CodersCrafter provided us with top-notch digital marketing solutions. Their strategies and designs have helped us grow our customer base significantly."
+  </p>
+  <div class="social-icons flex space-x-4">
+    <a href="#" class="text-gray-400 hover:text-red-500 transition"><i class="fab fa-facebook-f"></i></a>
+    <a href="#" class="text-gray-400 hover:text-red-500 transition"><i class="fab fa-twitter"></i></a>
+    <a href="#" class="text-gray-400 hover:text-red-500 transition"><i class="fab fa-instagram"></i></a>
+  </div>
+</div>
+
+
+
+</div>
+</div>
+
 
 </div>
 
