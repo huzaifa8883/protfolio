@@ -8,7 +8,7 @@ import AdminPanel from './components/Admin';
 import Aboutus from './components/Aboutus';
 import Projects from './components/Projects';
 
-import Project1 from './components/project1';
+import Project1 from "./components/Project1"
 import Project2 from './components/project2';
 import Project3 from './components/project3';
 import Project4 from './components/project4';
