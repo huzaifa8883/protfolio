@@ -119,7 +119,7 @@ const Contact = () => {
       <p className="text-lg text-gray-300 leading-relaxed font-medium">
         +923278363169
         <br />
-        +923278363169
+        
       </p>
     </motion.div>
 
@@ -138,7 +138,7 @@ const Contact = () => {
       <p className="text-lg text-gray-300 leading-relaxed font-medium">
      qhuzaifa675@gmail.com
         <br />
-        qhuzaifa675@gmail.com
+       
       </p>
     </motion.div>
 
