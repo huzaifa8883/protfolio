@@ -98,9 +98,9 @@ const Contact = () => {
       </div>
       <h3 className="text-2xl font-semibold mb-4 tracking-wide">Location</h3>
       <p className="text-lg text-gray-300 leading-relaxed font-medium">
-        168/170, Ave 01, Old York Drive
+        Sargodha road sui gas office near pearl city
         <br />
-        Dhaka, Bangladesh
+        Faisalabad, Pakistan
       </p>
     </motion.div>
 
@@ -117,9 +117,9 @@ const Contact = () => {
       </div>
       <h3 className="text-2xl font-semibold mb-4 tracking-wide">Phone</h3>
       <p className="text-lg text-gray-300 leading-relaxed font-medium">
-        +880171-770000
+        +923278363169
         <br />
-        +8801761111456
+        +923278363169
       </p>
     </motion.div>
 
@@ -136,9 +136,9 @@ const Contact = () => {
       </div>
       <h3 className="text-2xl font-semibold mb-4 tracking-wide">Email</h3>
       <p className="text-lg text-gray-300 leading-relaxed font-medium">
-        support@example.com
+     qhuzaifa675@gmail.com
         <br />
-        info@example.com
+        qhuzaifa675@gmail.com
       </p>
     </motion.div>
 
